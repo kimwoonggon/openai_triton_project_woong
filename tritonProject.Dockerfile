@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/pytorch:22.12-py3
+FROM nvcr.io/nvidia/pytorch:23.10-py3
 
 ARG CMAKE_VERSION=3.27.3
 ARG NUM_JOBS=100
@@ -56,4 +56,6 @@ RUN cd /tmp && \
     bash cmake-${CMAKE_VERSION}-linux-x86_64.sh --prefix=/usr/local --exclude-subdir --skip-license
 RUN rm -rf /tmp/*
 
-RUN pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+RUN pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+RUN pip3 install git+https://github.com/NVIDIA/TransformerEngine.git@stable
