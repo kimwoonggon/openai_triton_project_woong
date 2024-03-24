@@ -1,6 +1,6 @@
 # 스터디 참여를 위한 RoPE 구현  
 본 코드를 바탕으로 openai triton을 활용하여 Fused Rotary Embedding을 구현해보고 CUDA 커널을 활용한 Fused Rotary Embedding 구현 함수와 PyTorch 기반으로 짜여진 Fused Rotary Embedding과의 속도 비교를 수행합니다.  
-순서는 코드 소개, 코드 실행 방법, 벤치마크 결과 분석, 향후 개선 방향 순서로 구성되어 있습니다.  
+순서는 코드 소개, 코드 실행 방법, 벤치마크 결과, 향후 개선 방향 순서로 구성되어 있습니다.  
 
 ## 코드 소개  
 ### triton_rotary_main.py  
@@ -47,7 +47,7 @@ pytest pytest_benchmark_cuda_triton_comparison.py
 python pytest_benchmark_cuda_triton_comparison.py
 ```
 
-## 벤치마크 결과 분석  
+## 벤치마크 결과  
 
 
 
