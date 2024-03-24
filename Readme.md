@@ -10,17 +10,31 @@ backward=True면 커널 내부에서 forward에서 쓰이는 sin 부호가 -sin�
 ### triton_rotary_kernel.py  
 set_rotary_kernel 함수에서 그리드 크기 설정과 같은 kernel 실행을 위한 환경을 설정하고, rotary_kernel 함수에서 실질적으로 triton 상의 커널 연산 수행을 한다.  
 
-## 재현 방법  
+## 코드 실행 방법  
 
 
-#### 도커 파일을 활용한 빌드 
+#### 1. 도커 파일을 활용한 빌드 
 ```
 docker build -f tritonProject.Dockerfile -t tritonproject:cuda121gogo .
 ```
-#### 도커 컨테이너 실행하기
+#### 2. 도커 컨테이너 실행하기
 ```
 docker run -it --rm --gpus device=0 --ulimit memlock=-1 --ulimit stack=-1 --ulimit core=-1 --ipc=host --shm-size=32gb --name tritonproject -v $(pwd):/mnt tritonproject:cuda121gogo
 ```
+#### 3. 유닛 테스트 수행  
+
+```
+pytest pytest_benchmark_cuda_triton_comparison.py -s
+```
+#### 4. 벤치마크 수행  
+벤치마크를 통해 Triton Fused RoPE 수행 속도와 Cuda Fused RoPE 수행 속도를 비교한다.  
+또한 Triton Fused RoPE 수행 속도와 Torch RoPE(unfused)의 수행 속도를 비교한다.  
+seq_length, hidden_size, head_num, batch_size를 기준으로 벤치마크를 수행한다.  
+A100 80GB에서 실행되어서 변수들의 크기가 증가할 시 OOM이 발생할 수 있다.  
+```
+python pytest_benchmark_cuda_triton_comparison.py
+```
+
 #### 구동 환경   
 UBUNTU 20.04  
 GPU: A100 DGX 80GB
