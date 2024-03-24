@@ -2,6 +2,17 @@
 본 코드를 바탕으로 openai triton을 활용하여 Fused Rotary Embedding을 구현해보고 CUDA 커널을 활용한 Fused Rotary Embedding 구현 함수와 PyTorch 기반으로 짜여진 
 Fused Rotary Embedding과의 속도 비교를 수행한다.  
 
+## 코드 소개  
+### triton_rotary_main.py  
+RopeFowardAndBackward 클래스에서 triton rotary embedding의 forward 메소드와 backward 메소드를 정의한다.  
+forward 메소드와 backward 메소드는 매우 유사한데 set_rotary_kernel 메소드에서 backward=True이냐 False이냐에 따라 달라진다.  
+backward=True면 커널 내부에서 forward에서 쓰이는 sin 부호가 -sin으로 음수로 바뀐다.  
+### triton_rotary_kernel.py  
+set_rotary_kernel 함수에서 그리드 크기 설정과 같은 kernel 실행을 위한 환경을 설정하고, rotary_kernel 함수에서 실질적으로 triton 상의 커널 연산 수행을 한다.  
+
+## 재현 방법  
+
+
 #### 도커 파일을 활용한 빌드 
 ```
 docker build -f tritonProject.Dockerfile -t tritonproject:cuda121gogo .
