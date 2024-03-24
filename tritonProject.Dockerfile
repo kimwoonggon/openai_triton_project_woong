@@ -9,4 +9,3 @@ RUN git clone --branch stable --recursive https://github.com/NVIDIA/TransformerE
     cd TransformerEngine && \
     pip install -e .
 
-#docker build -f tritonProject.Dockerfile -t tritonproject:cuda121gogo .
