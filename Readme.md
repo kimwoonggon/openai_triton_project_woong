@@ -55,6 +55,7 @@ Triton Fused와 Cuda Fused의 경우 seq_length, hidden_size, head_num, batch_si
 ![example](./TritonVsCUDA_rope_benchmark_hidden_size_fused/hiddenSize_performance.png)  
 ![example](./TritonVsCUDA_rope_benchmark_head_num_fused/headNum_performance.png)  
 ![example](./TritonVsCUDA_rope_benchmark_batch_size_fused/batchSize_performance.png)  
+### Triton Fused vs Pytorch UnFused  
 Triton Fused와 Torch Unfused의 경우 Triton Fused가 속도 면에서 한참 앞섰습니다.  
 ![example](./TritonVsCUDA_rope_benchmark_seq_length_unfused/seqLen_performance.png)  
 ![example](./TritonVsCUDA_rope_benchmark_hidden_size_unfused/hiddenSize_performance.png)  
