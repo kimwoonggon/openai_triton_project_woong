@@ -62,5 +62,8 @@ Triton Fused와 Torch Unfused의 경우 Triton Fused가 속도 면에서 한참 
 ![example](./TritonVsCUDA_rope_benchmark_head_num_unfused/headNum_performance.png)  
 ![example](./TritonVsCUDA_rope_benchmark_batch_size_unfused/batchSize_performance.png)  
 
- 
+## 향후 개선 방향  
+컴퓨터 비전 연구원이라 CUDA나 OPENCL을 활용하여 영상 처리를 수행해본 경험은 꽤 있으나 Triton은 이번주에 공부를 시작하였습니다. 본 스터디 참여를 위한 Triton 공부를 시작하면서 Triton의 편의성과 가능성에 매료되었습니다. 개선 사항으로는 GPU상의 SRAM 활용 최적화를 위한 Triton Kerenl상의 블록 사이즈 지정이나 메모리 접근 최소화를 위해 노력해야 할 것 같습니다. 스터디를 진행하면서 많은 노력을 기울여 보도록 하겠습니다. 감사합니다.  
+김웅곤 드림  
+
 
