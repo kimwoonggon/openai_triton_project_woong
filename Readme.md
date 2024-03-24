@@ -21,7 +21,7 @@ A100 80GB에서 실행되어서 변수들의 크기가 증가할 시 OOM이 발�
 ## 코드 실행 방법  
 ### 구동 환경   
 UBUNTU 20.04  
-GPU: A100 DGX 80GB
+GPU: A100 DGX 80GB  
 torch==2.1.0a0+32f93b1  
 cuda==12.2  
 cudnn==8.9.0.5  
