@@ -1,7 +1,7 @@
 Openai triton project for visual transformer implementation  
 Dockerfile Build  
 ```
-docker build -f tritonProject.Dockerfile -t tritonproject:cuda121 .
+docker build -f tritonProject.Dockerfile -t tritonproject:cuda121gogo .
 ```
 Docker container start
 ```
