@@ -6,7 +6,7 @@ import triton.language as tl
 
 @triton.jit
 def rotary_kernel(
-    OUT,  # Pointers to matrices
+    OUT,
     X,
     COS,
     SIN,
@@ -109,7 +109,6 @@ def set_rotary_kernel(
     assert sin.shape == cos.shape
     rotary_dim *= 2
     assert rotary_dim <= headdim, "rotary_dim must be <= headdim"
-    #assert headdim <= 256, "Only support headdim <= 256"
     assert seqlen_ro >= seqlen, "seqlen_ro must be >= seqlen"
 
     assert (
