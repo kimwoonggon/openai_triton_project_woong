@@ -11,7 +11,14 @@ backward=True면 커널 내부에서 forward에서 쓰이는 sin 부호가 -sin�
 set_rotary_kernel 함수에서 그리드 크기 설정과 같은 kernel 실행을 위한 환경을 설정하고, rotary_kernel 함수에서 실질적으로 triton 상의 커널 연산 수행을 한다.  
 
 ## 코드 실행 방법  
-
+### 구동 환경   
+UBUNTU 20.04  
+GPU: A100 DGX 80GB
+torch==2.1.0a0+32f93b1  
+cuda==12.2  
+cudnn==8.9.0.5  
+triton==2.1.0  
+Nvidia TransformerEngine(https://github.com/NVIDIA/TransformerEngine) 활용  
 
 #### 1. 도커 파일을 활용한 빌드 
 ```
@@ -35,13 +42,6 @@ A100 80GB에서 실행되어서 변수들의 크기가 증가할 시 OOM이 발�
 python pytest_benchmark_cuda_triton_comparison.py
 ```
 
-#### 구동 환경   
-UBUNTU 20.04  
-GPU: A100 DGX 80GB
-torch==2.1.0a0+32f93b1  
-cuda==12.2  
-cudnn==8.9.0.5  
-triton==2.1.0  
-Nvidia TransformerEngine 활용  
+
 
 
