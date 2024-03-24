@@ -52,7 +52,7 @@ python pytest_benchmark_cuda_triton_comparison.py
 ### Triton Fused vs Cuda Fused  
 Triton Fused와 Cuda Fused의 경우 seq_length, hidden_size, head_num, batch_size 변화에 대해서 Triton Fused의 성능이 근소하게 앞섰다.  
 ![example](./TritonVsCUDA_rope_benchmark_seq_length_fused/seqLen_performance.png)  
-![example](./TritonVsCUDA_rope_benchmark_hidden_size_fused/seqLen_performance.png)  
+![example](./TritonVsCUDA_rope_benchmark_hidden_size_fused/hiddenSize_performance.png)  
 ![example](./TritonVsCUDA_rope_benchmark_head_num_fused/headNum_performance.png)  
 ![example](./TritonVsCUDA_rope_benchmark_batch_size_fused/batchSize_performance.png)  
  
