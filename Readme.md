@@ -40,7 +40,7 @@ docker run -it --rm --gpus device=0 --ulimit memlock=-1 --ulimit stack=-1 --ulim
 #### 3. 유닛 테스트 수행  
 
 ```
-pytest pytest_benchmark_cuda_triton_comparison.py -s
+pytest pytest_benchmark_cuda_triton_comparison.py
 ```
 #### 4. 벤치마크 수행   
 ```
