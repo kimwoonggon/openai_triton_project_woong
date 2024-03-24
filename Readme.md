@@ -49,6 +49,6 @@ python pytest_benchmark_cuda_triton_comparison.py
 
 
 ## 벤치마크 결과  
-![example](./TritonVsCUDA_rope_benchmark_seq_length_fused/RoPE_performance.png)  
-
+![example](./TritonVsCUDA_rope_benchmark_seq_length_fused/RoPE_performance.png)  ![example](./TritonVsCUDA_rope_benchmark_hidden_size_fused/RoPE_performance.png)  ![example](./TritonVsCUDA_rope_benchmark_head_num_fused/RoPE_performance.png) ![example](./TritonVsCUDA_rope_benchmark_batch_size_fused/RoPE_performance.png)
+ 
 
