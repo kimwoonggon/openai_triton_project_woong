@@ -42,7 +42,7 @@ docker run -it --rm --gpus device=0 --ulimit memlock=-1 --ulimit stack=-1 --ulim
 ```
 pytest pytest_benchmark_cuda_triton_comparison.py
 ```
-#### 4. 벤치마크 수행(위와 같은 파일)   
+#### 4. 벤치마크 수행(위와 같은 파일, CUDA_FUSED=True인 경우에 CUDA_KERNEL_FUSED 모드로 수행된다)     
 ```
 python pytest_benchmark_cuda_triton_comparison.py
 ```
