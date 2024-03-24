@@ -1,3 +1,7 @@
+# 스터디 참여를 위한 RoPE 구현  
+본 코드를 바탕으로 openai triton을 활용하여 Fused Rotary Embedding을 구현해보고 CUDA 커널을 활용한 Fused Rotary Embedding 구현 함수와 PyTorch 기반으로 짜여진 
+Fused Rotary Embedding과의 속도 비교를 수행한다.  
+
 #### 도커 파일을 활용한 빌드 
 ```
 docker build -f tritonProject.Dockerfile -t tritonproject:cuda121gogo .
