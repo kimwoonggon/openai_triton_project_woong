@@ -12,4 +12,7 @@ GPU: A100 DGX 80GB
 torch==2.1.0a0+32f93b1  
 cuda==12.2  
 cudnn==8.9.0.5  
+triton==2.1.0  
+Nvidia TransformerEngine 활용  
+
 
